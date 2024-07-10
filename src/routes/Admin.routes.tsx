@@ -1,23 +1,19 @@
 // import { Children } from "react";
-import { ReactNode } from "react";
+// import { ReactNode } from "react";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
-type TRoute = {
-    path: string,
-    element: ReactNode
-}
+// type TRoute = {
+//     path: string,
+//     element: ReactNode
+// }
 
-type TsideBarItem = {
-    key: string,
-    label: ReactNode,
-    children?: TsideBarItem[]
-}
 
-const adminpaths2 =[
+
+export const adminpaths =[
     {
         name: 'dashboard',
         path: "dashboard",
@@ -46,66 +42,26 @@ const adminpaths2 =[
 ]
 
 
-export const adminRoutes = adminpaths2.reduce((acc: TRoute[], item) =>{
-    if(item.path && item.element){
-        acc.push({
-            path: item.path,
-            element: item.element,
-        })
-    }
 
-    if(item.children){
-        item.children.forEach((child) => {
-            acc.push({
-                path: child.path,
-                element: child.element,
-            })
-        })
-    }
-    return acc;
-}, [])
+// export const adminSidebarItems = adminpaths.reduce((acc:TsideBarItem[], item) =>{
+//     if(item.path && item.name){
+//         acc.push({
+//             key: item.name,
+//             label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
+//         })
+//     }
 
+//     if(item.children){
+//         acc.push({
+//             key: item.name,
+//             label: item.name,
+//             children: item.children.map((child) => ({
+//                 key: child.name,
+//                 label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
 
-export const adminSidebarItems = adminpaths2.reduce((acc:TsideBarItem[], item) =>{
-    if(item.path && item.name){
-        acc.push({
-            key: item.name,
-            label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
-        })
-    }
+//             }))
+//         })
+//     }
+//     return acc;
+// }, [])
 
-    if(item.children){
-        acc.push({
-            key: item.name,
-            label: item.name,
-            children: item.children.map((child) => ({
-                key: child.name,
-                label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
-
-            }))
-        })
-    }
-    return acc;
-}, [])
-
-// const adminpaths = [
-//     {
-//         path: "dashboard",
-//         element: <AdminDashboard />
-//     },
-//     {
-//         path: "create-student",
-//         element: <CreateStudent />
-//     },
-//     {
-//         path: "create-admin",
-//         element: <CreateAdmin />
-//     },
-//     {
-//         path: "create-faculty",
-//         element: <CreateFaculty />
-//     },
-
-// ]
-
-// export default adminpaths;

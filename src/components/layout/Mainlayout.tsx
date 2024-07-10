@@ -1,43 +1,12 @@
 import { Layout, Menu } from 'antd';
 import {  Outlet } from 'react-router-dom';
-import { adminSidebarItems } from '../../routes/Admin.routes';
-// import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-// import { createElement } from 'react';
+import { sideBarRoutes } from '../../utils/SidebarItemGenerator';
+import { adminpaths } from '../../routes/Admin.routes';
+// import { adminSidebarItems } from '../../routes/Admin.routes';
+
 
 const { Header, Content, Footer, Sider } = Layout;
 
-
-
-// const items: MenuProps['items'] = [
-//   {
-//     key: '1',
-//     label: "Dashbord"
-//   },
-//   {
-//     key: 'home',
-//     label: <NavLink to="/">Home</NavLink> 
-//   },
-//   {
-//     key: '3',
-//     label: "About"
-//   },
-//   {
-//     key: '4',
-//     label: "User management",
-//     children: [
-//        { key: 'create-admin',
-//         label: <NavLink to = '/admin/create-admin'>Create admin</NavLink>
-//     },
-//        { key: '33',
-//         label: 'technology'
-//     },
-//        { key: '44',
-//         label: 'architect'
-//     },
-//     ]
-//   },
-  
-// ]
 
 const Mainlayout = () => {
     return (
@@ -54,7 +23,7 @@ const Mainlayout = () => {
       >
         <div className="demo-logo-vertical" />
         <h1 style={{color: "white", display: "flex" ,paddingTop:'5px', justifyContent: "center" , alignItems: "center"}}> Ph-university</h1>
-        <Menu style={{color: 'white'}} theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
+        <Menu style={{color: 'white'}} theme="dark" mode="inline" defaultSelectedKeys={['4']} items={sideBarRoutes(adminpaths,'admin')} />
       </Sider>
       <Layout>
         <Header style={{ padding: 0 }} />
