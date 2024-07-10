@@ -3,13 +3,6 @@ import { TRoute, TuserPath } from "../types/sidebar.type"
 
 
 
-// type TuserPath = {
-//     name: string,
-//     path?: string,
-//     element?: ReactNode,
-//     children?: TuserPath[]
-// }
-
 
 export const routeGenerator = (item : TuserPath[]) => {
     const routes = item.reduce((acc: TRoute[], item) => {
