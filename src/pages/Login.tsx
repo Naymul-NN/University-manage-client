@@ -4,6 +4,7 @@ import { useLoginMutation } from "../redux/features/auth/authApi";
 import { useAppDispatch } from "../redux/features/hooks";
 import { setUser } from "../redux/features/auth/authSlice";
 import { varifytoken } from "../utils/varifytoken";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormInputs {
      id: string;
@@ -11,6 +12,7 @@ interface LoginFormInputs {
    }
 
 const Login = () => { 
+     const navigate = useNavigate();
      const dispatch = useAppDispatch();
 
      const {register,handleSubmit} = useForm<LoginFormInputs>();
@@ -24,8 +26,8 @@ const Login = () => {
          const res =await login(userInfo).unwrap();
         
          const user = varifytoken(res.data.accessToken);
-         
          dispatch(setUser({user: user, token: res.data.accessToken}))
+         navigate("/");
      }
 return ( 
      <form onSubmit={handleSubmit(onSubmit)}>
