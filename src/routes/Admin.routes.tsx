@@ -1,5 +1,6 @@
 // import { Children } from "react";
 // import { ReactNode } from "react";
+// import AcademicSemester from "../pages/admin/academicManagemant/AcademicSemester";
 import AcademicSemester from "../pages/admin/academicManagemant/AcademicSemester";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
@@ -19,13 +20,13 @@ export const adminpaths =[
     {
         name: 'Academic Management',
         children: [
-            {
-                name: "Academic Semester",
-                path: "academic-semester",
-                element:<AcademicSemester/>
-        },
-        ]
-    },
+          {
+            name: 'Academic Semester',
+            path: 'academic-semester',
+            element: <AcademicSemester />,
+          },
+        ],
+      },
     {
         name: 'User management',
         children: [
