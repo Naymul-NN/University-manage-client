@@ -1,7 +1,6 @@
 import { BaseQueryApi, BaseQueryFn, createApi, DefinitionType, FetchArgs, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../features/store";
 import { logOut, setUser } from "../features/auth/authSlice";
-// import {  logOut, setUser } from "../features/auth/authSlice";
 
 
 const baseQuery = fetchBaseQuery({
@@ -47,7 +46,6 @@ const baseQueryWithRefreshToken: BaseQueryFn<
       api.dispatch(logOut())
     }
   }
-console.log(result);
   return result;
 };
 
